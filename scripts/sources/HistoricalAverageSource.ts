@@ -1,4 +1,4 @@
-import type { ForecastSnapshot, SkyCondition, WeatherSource } from '../types/weather'
+import type { ForecastSnapshot, SkyCondition, WeatherObservation, WeatherSource } from '../types/weather'
 import { monthOf } from '../lib/timezone'
 
 /**
@@ -33,6 +33,11 @@ export class HistoricalAverageSource implements WeatherSource {
     _leadTimeDays: ForecastSnapshot['leadTimeDays'],
   ): Promise<ForecastSnapshot | null> {
     // This source only provides the historical baseline, not lead-time forecasts
+    return Promise.resolve(null)
+  }
+
+  fetchObservation(_targetDate: string): Promise<WeatherObservation | null> {
+    // Observations come from OpenMeteoSource (archive API), not historical averages
     return Promise.resolve(null)
   }
 

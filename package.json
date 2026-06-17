@@ -14,7 +14,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "capture": "tsx scripts/capture.ts"
+    "capture": "tsx scripts/capture.ts",
+    "score": "tsx scripts/score.ts"
   },
   "dependencies": {
     "react": "^19.0.0",
