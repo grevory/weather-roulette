@@ -1,0 +1,61 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Also re-deploy after the data job commits new scores
+  workflow_run:
+    workflows: [Capture Weather Forecast]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deploy at a time; don't cancel in-progress (let it finish)
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Compute scores (in case data was updated in this commit)
+        run: npm run score
+
+      - name: Build
+        run: npm run build
+
+      # Copy the raw data into dist so the app can fetch it at runtime
+      - name: Copy data into dist
+        run: |
+          mkdir -p dist/data
+          [ -f data/scores.json ] && cp data/scores.json dist/data/scores.json || echo '[]' > dist/data/scores.json
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
