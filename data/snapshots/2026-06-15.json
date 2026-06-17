@@ -1,0 +1,47 @@
+[
+  {
+    "capturedAt": "2026-06-14T06:00:00.000Z",
+    "targetDate": "2026-06-15",
+    "leadTimeDays": 1,
+    "highTempC": 13.3,
+    "sky": "clear",
+    "precipMm": 2.8,
+    "source": "open-meteo"
+  },
+  {
+    "capturedAt": "2026-06-13T06:00:00.000Z",
+    "targetDate": "2026-06-15",
+    "leadTimeDays": 2,
+    "highTempC": 10.1,
+    "sky": "rain",
+    "precipMm": 0,
+    "source": "open-meteo"
+  },
+  {
+    "capturedAt": "2026-06-08T06:00:00.000Z",
+    "targetDate": "2026-06-15",
+    "leadTimeDays": 7,
+    "highTempC": 16.7,
+    "sky": "overcast",
+    "precipMm": 8.7,
+    "source": "open-meteo"
+  },
+  {
+    "capturedAt": "2026-06-01T06:00:00.000Z",
+    "targetDate": "2026-06-15",
+    "leadTimeDays": 14,
+    "highTempC": 18.6,
+    "sky": "rain",
+    "precipMm": 0,
+    "source": "open-meteo"
+  },
+  {
+    "capturedAt": "2026-06-17T22:59:45.550Z",
+    "targetDate": "2026-06-15",
+    "leadTimeDays": 1,
+    "highTempC": 16.1,
+    "sky": "partly-cloudy",
+    "precipMm": 3,
+    "source": "historical-average"
+  }
+]

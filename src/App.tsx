@@ -44,7 +44,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="app__header">
-        <h1 className="app__title">Weather Roulatte</h1>
+        <h1 className="app__title">Weather Roulette</h1>
         <p className="app__subtitle">
           Professional forecast vs random guess — St.&nbsp;John&apos;s, NL
         </p>

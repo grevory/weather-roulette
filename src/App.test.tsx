@@ -19,7 +19,7 @@ describe('App', () => {
     await waitFor(() =>
       expect(screen.queryByText(/Loading/)).not.toBeInTheDocument()
     )
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Weather Roulatte')
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Weather Roulette')
   })
 
   it('shows collecting message when scores are empty', async () => {

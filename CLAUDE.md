@@ -1,11 +1,11 @@
-# Weather Roulatte
+# Weather Roulette
 
 A TypeScript/React app that pits professional weather forecasts against a single seeded
 random-guess baseline (from historical averages) for St. John's, NL, Canada.
 
 ## Name
 
-"Weather Roulatte" — intentional spelling (not "Roulette").
+"Weather Roulette"
 
 ## Stack
 
