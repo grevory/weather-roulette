@@ -2,7 +2,7 @@ name: Capture Weather Forecast
 
 on:
   schedule:
-    # 06:00 UTC daily = 03:30 NST / 02:30 NDT — before local forecast day changes
+    # 06:00 UTC daily = 03:30 NST / 02:30 NDT — well before local forecast day changes
     - cron: '0 6 * * *'
   workflow_dispatch: {}
 
@@ -13,11 +13,28 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
+
       - run: npm ci
-      - run: npm run typecheck
-      - name: Capture forecast (stub — not yet implemented)
-        run: echo "Forecast capture not yet implemented"
+
+      - name: Run type check
+        run: npm run typecheck
+
+      - name: Capture forecasts
+        run: npm run capture
+
+      - name: Commit snapshots
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/snapshots/
+          if git diff --cached --quiet; then
+            echo "No new snapshots to commit."
+          else
+            git commit -m "chore: capture forecast snapshots $(date -u +%Y-%m-%d) [skip ci]"
+            git push
+          fi
