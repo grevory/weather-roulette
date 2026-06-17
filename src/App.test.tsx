@@ -4,7 +4,7 @@ import App from './App'
 beforeEach(() => {
   vi.spyOn(globalThis, 'fetch').mockResolvedValue({
     ok: true,
-    json: () => Promise.resolve([]),
+    json: () => Promise.resolve({ updatedAt: '2026-06-17T12:00:00Z', scores: [] }),
   } as Response)
 })
 

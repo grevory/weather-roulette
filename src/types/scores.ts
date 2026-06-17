@@ -1,5 +1,10 @@
 export type SkyCondition = 'clear' | 'partly-cloudy' | 'overcast' | 'rain' | 'snow'
 
+export interface ScoresFile {
+  updatedAt: string
+  scores: Score[]
+}
+
 export interface Score {
   targetDate: string
   leadTimeDays: 1 | 2 | 7 | 14

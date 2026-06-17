@@ -1,13 +1,23 @@
 import { useEffect, useState } from 'react'
-import type { Score } from './types/scores'
+import type { Score, ScoresFile } from './types/scores'
 import { summariseByLeadTime } from './lib/stats'
 import { LeadTimeCard } from './components/LeadTimeCard'
+import { DayHistory } from './components/DayHistory'
 import './App.css'
 
 const SCORES_URL = `${import.meta.env.BASE_URL}data/scores.json`
 
+function formatUpdated(iso: string): string {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/St_Johns',
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  }).format(new Date(iso))
+}
+
 export default function App() {
   const [scores, setScores] = useState<Score[]>([])
+  const [updatedAt, setUpdatedAt] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -15,10 +25,11 @@ export default function App() {
     fetch(SCORES_URL)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`)
-        return r.json() as Promise<Score[]>
+        return r.json() as Promise<ScoresFile>
       })
       .then((data) => {
-        setScores(data)
+        setScores(data.scores)
+        setUpdatedAt(data.updatedAt)
         setLoading(false)
       })
       .catch((err: unknown) => {
@@ -28,9 +39,7 @@ export default function App() {
   }, [])
 
   const summaries = summariseByLeadTime(scores)
-  const totalScored = scores.length > 0
-    ? Math.max(...summaries.map((s) => s.count))
-    : 0
+  const hasScores = scores.length > 0
 
   return (
     <div className="app">
@@ -42,28 +51,35 @@ export default function App() {
       </header>
 
       <main className="app__main">
-        {loading && <p className="status">Loading scores…</p>}
+        {loading && <p className="status">Loading…</p>}
         {error && <p className="status status--error">Could not load scores: {error}</p>}
 
-        {!loading && !error && totalScored === 0 && (
+        {!loading && !error && !hasScores && (
           <p className="status">
-            No scored days yet — check back after the first target dates pass.
+            No scored days yet — the first results arrive after 2026-06-18.
           </p>
         )}
 
         {!loading && !error && (
-          <div className="grid">
-            {summaries.map((s) => (
-              <LeadTimeCard key={s.leadTimeDays} summary={s} />
-            ))}
-          </div>
+          <>
+            <div className="grid">
+              {summaries.map((s) => (
+                <LeadTimeCard key={s.leadTimeDays} summary={s} />
+              ))}
+            </div>
+
+            <DayHistory scores={scores} />
+          </>
         )}
       </main>
 
       <footer className="app__footer">
         <p>
           Data: <a href="https://open-meteo.com" target="_blank" rel="noreferrer">Open-Meteo</a>
-          {' · '}Updated daily by GitHub Actions
+          {' · '}
+          {updatedAt
+            ? `Updated ${formatUpdated(updatedAt)} NST`
+            : 'Updated daily by GitHub Actions'}
         </p>
       </footer>
     </div>

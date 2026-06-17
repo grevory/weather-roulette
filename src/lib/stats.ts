@@ -13,8 +13,8 @@ export function skyAccuracy(correct: boolean[]): number {
 export interface LeadTimeSummary {
   leadTimeDays: 1 | 2 | 7 | 14
   count: number
-  forecast: { maeTempC: number; skyPct: number }
-  baseline: { maeTempC: number; skyPct: number }
+  forecast: { maeTempC: number; skyPct: number; maePrecipMm: number }
+  baseline: { maeTempC: number; skyPct: number; maePrecipMm: number }
   skillScore: number | null
 }
 
@@ -23,7 +23,13 @@ export function summariseByLeadTime(scores: Score[]): LeadTimeSummary[] {
   return leads.map((lead) => {
     const group = scores.filter((s) => s.leadTimeDays === lead)
     if (group.length === 0) {
-      return { leadTimeDays: lead, count: 0, forecast: { maeTempC: 0, skyPct: 0 }, baseline: { maeTempC: 0, skyPct: 0 }, skillScore: null }
+      return {
+        leadTimeDays: lead,
+        count: 0,
+        forecast: { maeTempC: 0, skyPct: 0, maePrecipMm: 0 },
+        baseline: { maeTempC: 0, skyPct: 0, maePrecipMm: 0 },
+        skillScore: null,
+      }
     }
 
     const fMae = mae(group.map((s) => s.forecast.tempErrorC))
@@ -35,10 +41,12 @@ export function summariseByLeadTime(scores: Score[]): LeadTimeSummary[] {
       forecast: {
         maeTempC: fMae,
         skyPct: skyAccuracy(group.map((s) => s.forecast.skyCorrect)),
+        maePrecipMm: mae(group.map((s) => s.forecast.precipErrorMm)),
       },
       baseline: {
         maeTempC: bMae,
         skyPct: skyAccuracy(group.map((s) => s.baseline.skyCorrect)),
+        maePrecipMm: mae(group.map((s) => s.baseline.precipErrorMm)),
       },
       skillScore: bMae === 0 ? null : 1 - fMae / bMae,
     }
