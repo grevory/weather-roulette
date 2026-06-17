@@ -1,0 +1,23 @@
+name: Capture Weather Forecast
+
+on:
+  schedule:
+    # 06:00 UTC daily = 03:30 NST / 02:30 NDT — before local forecast day changes
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run typecheck
+      - name: Capture forecast (stub — not yet implemented)
+        run: echo "Forecast capture not yet implemented"
