@@ -1,18 +1,25 @@
 /**
- * Backfill historical snapshots and observations.
+ * Backfill historical observations only.
  *
- * For each target date in the past (default: 90 days), we reconstruct what the
- * forecast *would have looked like* at each lead time by fetching the actual
- * observed value from the Open-Meteo archive for the capture date — i.e. what
- * Open-Meteo was showing for that day when the forecast was made.
+ * WARNING — KNOWN LIMITATION:
+ * There is no free API that returns what Open-Meteo was forecasting on a specific
+ * past date at a given lead time. The Open-Meteo Historical Forecast API is a
+ * hindcast (same values regardless of lead time). The Single Runs API is not
+ * publicly available on the free tier.
  *
- * This is an approximation: the archive returns observed values, not the
- * historical forecast model output. True historical forecast backfill would
- * require the Open-Meteo Historical Forecast API (paid). For the free tier,
- * the archive serves as a reasonable proxy for what the "forecast" was.
+ * As a result, this script uses the Open-Meteo *archive* (observed actuals) as
+ * a proxy for every lead-time forecast. This makes all four lead times identical
+ * and gives skill = 100% for every backfilled date — which is meaningless.
+ *
+ * This script is retained only to populate `data/observations/` for dates where
+ * real forward-looking snapshots already exist. Do NOT use it to generate
+ * forecast snapshots; those must come from the daily `npm run capture` job.
+ *
+ * Real lead-time-differentiated scores accumulate naturally as the daily capture
+ * job collects genuine advance forecasts and those target dates pass.
  *
  * Usage:
- *   npm run backfill                  # backfill last 90 days
+ *   npm run backfill                  # backfill observations for last 90 days
  *   npm run backfill -- --days 30     # backfill last 30 days
  *   npm run backfill -- --dry-run     # print what would be written, no writes
  */

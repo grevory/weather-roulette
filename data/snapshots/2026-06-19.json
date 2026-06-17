@@ -1,15 +1,15 @@
 [
   {
-    "capturedAt": "2026-06-17T11:28:22.297Z",
+    "capturedAt": "2026-06-17T21:05:07.271Z",
     "targetDate": "2026-06-19",
     "leadTimeDays": 2,
-    "highTempC": 9.4,
+    "highTempC": 10,
     "sky": "rain",
-    "precipMm": 2.6,
+    "precipMm": 1.2,
     "source": "open-meteo"
   },
   {
-    "capturedAt": "2026-06-17T11:28:22.297Z",
+    "capturedAt": "2026-06-17T21:05:07.271Z",
     "targetDate": "2026-06-19",
     "leadTimeDays": 1,
     "highTempC": 16.1,

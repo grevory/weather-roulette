@@ -16,7 +16,8 @@
     "test:coverage": "vitest run --coverage",
     "capture": "tsx scripts/capture.ts",
     "score": "tsx scripts/score.ts",
-    "backfill": "tsx scripts/backfill.ts"
+    "backfill": "tsx scripts/backfill.ts",
+    "validate": "tsx scripts/validate.ts"
   },
   "dependencies": {
     "react": "^19.0.0",
