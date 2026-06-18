@@ -39,8 +39,10 @@ export function computeScore(
   return {
     targetDate: forecast.targetDate,
     leadTimeDays: forecast.leadTimeDays,
-    forecast: f,
-    baseline: b,
+    source: forecast.source,
+    forecast: { highTempC: forecast.highTempC, sky: forecast.sky, ...f },
+    baseline: { highTempC: baseline.highTempC, sky: baseline.sky, ...b },
+    observation: { highTempC: obs.highTempC, sky: obs.sky, precipMm: obs.precipMm },
     skillScore,
   }
 }

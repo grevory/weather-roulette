@@ -23,15 +23,25 @@ export interface WeatherObservation {
 export interface Score {
   targetDate: string
   leadTimeDays: 1 | 2 | 7 | 14
+  source: 'open-meteo' | 'historical-average'
   forecast: {
-    tempErrorC: number       // signed: forecast - observed
+    highTempC: number
+    sky: SkyCondition
+    tempErrorC: number
     skyCorrect: boolean
     precipErrorMm: number
   }
   baseline: {
+    highTempC: number
+    sky: SkyCondition
     tempErrorC: number
     skyCorrect: boolean
     precipErrorMm: number
+  }
+  observation: {
+    highTempC: number
+    sky: SkyCondition
+    precipMm: number
   }
   /** 1 − |forecast temp error| / |baseline temp error|. Positive = forecast wins. */
   skillScore: number | null

@@ -20,8 +20,10 @@ describe('summariseByLeadTime', () => {
   const makeScore = (lead: 1 | 2 | 7 | 14, fErr: number, bErr: number): Score => ({
     targetDate: '2024-07-01',
     leadTimeDays: lead,
-    forecast: { tempErrorC: fErr, skyCorrect: true, precipErrorMm: 0 },
-    baseline: { tempErrorC: bErr, skyCorrect: false, precipErrorMm: 1 },
+    source: 'open-meteo' as const,
+    forecast: { highTempC: 15, sky: 'overcast' as const, tempErrorC: fErr, skyCorrect: true, precipErrorMm: 0 },
+    baseline: { highTempC: 16, sky: 'rain' as const, tempErrorC: bErr, skyCorrect: false, precipErrorMm: 1 },
+    observation: { highTempC: 14, sky: 'overcast' as const, precipMm: 0 },
     skillScore: null,
   })
 
