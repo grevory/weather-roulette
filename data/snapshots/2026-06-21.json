@@ -16,5 +16,14 @@
     "sky": "partly-cloudy",
     "precipMm": 3,
     "source": "historical-average"
+  },
+  {
+    "capturedAt": "2026-06-20T07:14:19.572Z",
+    "targetDate": "2026-06-21",
+    "leadTimeDays": 1,
+    "highTempC": 14.5,
+    "sky": "rain",
+    "precipMm": 0.1,
+    "source": "open-meteo"
   }
 ]
