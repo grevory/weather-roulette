@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T07:07:41.291Z",
+  "updatedAt": "2026-06-24T07:04:25.055Z",
   "scores": [
     {
       "targetDate": "2026-06-03",
@@ -1400,6 +1400,31 @@
         "precipMm": 0
       },
       "skillScore": 0.4246575342465755
+    },
+    {
+      "targetDate": "2026-06-18",
+      "leadTimeDays": 1,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 12.5,
+        "sky": "overcast",
+        "tempErrorC": -0.9000000000000004,
+        "skyCorrect": true,
+        "precipErrorMm": 0
+      },
+      "baseline": {
+        "highTempC": 16.1,
+        "sky": "partly-cloudy",
+        "tempErrorC": 2.700000000000001,
+        "skyCorrect": false,
+        "precipErrorMm": 3
+      },
+      "observation": {
+        "highTempC": 13.4,
+        "sky": "overcast",
+        "precipMm": 0
+      },
+      "skillScore": 0.6666666666666667
     }
   ]
 }
