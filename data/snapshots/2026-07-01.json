@@ -34,5 +34,14 @@
     "sky": "rain",
     "precipMm": 0.1,
     "source": "open-meteo"
+  },
+  {
+    "capturedAt": "2026-06-30T07:10:59.175Z",
+    "targetDate": "2026-07-01",
+    "leadTimeDays": 1,
+    "highTempC": 18.5,
+    "sky": "overcast",
+    "precipMm": 0,
+    "source": "open-meteo"
   }
 ]
