@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T07:04:01.585Z",
+  "updatedAt": "2026-08-15T06:17:28.491Z",
   "scores": [
     {
       "targetDate": "2026-06-03",
@@ -6100,6 +6100,106 @@
         "precipMm": 0
       },
       "skillScore": 0.6764705882352935
+    },
+    {
+      "targetDate": "2026-08-09",
+      "leadTimeDays": 14,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 14.6,
+        "sky": "rain",
+        "tempErrorC": -0.5999999999999996,
+        "skyCorrect": false,
+        "precipErrorMm": 4.05
+      },
+      "baseline": {
+        "highTempC": 20.5,
+        "sky": "partly-cloudy",
+        "tempErrorC": 5.300000000000001,
+        "skyCorrect": false,
+        "precipErrorMm": 3.5
+      },
+      "observation": {
+        "highTempC": 15.2,
+        "sky": "overcast",
+        "precipMm": 0
+      },
+      "skillScore": 0.8867924528301887
+    },
+    {
+      "targetDate": "2026-08-09",
+      "leadTimeDays": 7,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 23.4,
+        "sky": "overcast",
+        "tempErrorC": 8.2,
+        "skyCorrect": true,
+        "precipErrorMm": 0
+      },
+      "baseline": {
+        "highTempC": 20.5,
+        "sky": "partly-cloudy",
+        "tempErrorC": 5.300000000000001,
+        "skyCorrect": false,
+        "precipErrorMm": 3.5
+      },
+      "observation": {
+        "highTempC": 15.2,
+        "sky": "overcast",
+        "precipMm": 0
+      },
+      "skillScore": -0.5471698113207544
+    },
+    {
+      "targetDate": "2026-08-09",
+      "leadTimeDays": 2,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 15.9,
+        "sky": "overcast",
+        "tempErrorC": 0.7000000000000011,
+        "skyCorrect": true,
+        "precipErrorMm": 0
+      },
+      "baseline": {
+        "highTempC": 20.5,
+        "sky": "partly-cloudy",
+        "tempErrorC": 5.300000000000001,
+        "skyCorrect": false,
+        "precipErrorMm": 3.5
+      },
+      "observation": {
+        "highTempC": 15.2,
+        "sky": "overcast",
+        "precipMm": 0
+      },
+      "skillScore": 0.8679245283018866
+    },
+    {
+      "targetDate": "2026-08-09",
+      "leadTimeDays": 1,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 15,
+        "sky": "rain",
+        "tempErrorC": -0.1999999999999993,
+        "skyCorrect": false,
+        "precipErrorMm": 0.1
+      },
+      "baseline": {
+        "highTempC": 20.5,
+        "sky": "partly-cloudy",
+        "tempErrorC": 5.300000000000001,
+        "skyCorrect": false,
+        "precipErrorMm": 3.5
+      },
+      "observation": {
+        "highTempC": 15.2,
+        "sky": "overcast",
+        "precipMm": 0
+      },
+      "skillScore": 0.9622641509433963
     }
   ]
 }
