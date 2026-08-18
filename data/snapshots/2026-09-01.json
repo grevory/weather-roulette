@@ -1,0 +1,11 @@
+[
+  {
+    "capturedAt": "2026-08-18T06:21:06.252Z",
+    "targetDate": "2026-09-01",
+    "leadTimeDays": 1,
+    "highTempC": 15.9,
+    "sky": "partly-cloudy",
+    "precipMm": 4,
+    "source": "historical-average"
+  }
+]
