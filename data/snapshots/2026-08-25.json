@@ -25,5 +25,14 @@
     "sky": "rain",
     "precipMm": 18.3,
     "source": "open-meteo"
+  },
+  {
+    "capturedAt": "2026-08-23T06:20:06.792Z",
+    "targetDate": "2026-08-25",
+    "leadTimeDays": 2,
+    "highTempC": 24.8,
+    "sky": "rain",
+    "precipMm": 0.3,
+    "source": "open-meteo"
   }
 ]
