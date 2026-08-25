@@ -1,0 +1,20 @@
+[
+  {
+    "capturedAt": "2026-08-25T06:23:32.898Z",
+    "targetDate": "2026-09-08",
+    "leadTimeDays": 14,
+    "highTempC": 16,
+    "sky": "rain",
+    "precipMm": 0.9,
+    "source": "open-meteo"
+  },
+  {
+    "capturedAt": "2026-08-25T06:23:32.898Z",
+    "targetDate": "2026-09-08",
+    "leadTimeDays": 1,
+    "highTempC": 15.9,
+    "sky": "partly-cloudy",
+    "precipMm": 4,
+    "source": "historical-average"
+  }
+]
