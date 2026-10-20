@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T11:24:58.726Z",
+  "updatedAt": "2026-10-20T10:31:38.828Z",
   "scores": [
     {
       "targetDate": "2026-06-03",
@@ -12675,6 +12675,81 @@
         "precipMm": 0.6
       },
       "skillScore": 0.8245614035087719
+    },
+    {
+      "targetDate": "2026-10-14",
+      "leadTimeDays": 14,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 16.8,
+        "sky": "overcast",
+        "tempErrorC": 7.100000000000001,
+        "skyCorrect": true,
+        "precipErrorMm": 0
+      },
+      "baseline": {
+        "highTempC": 9.7,
+        "sky": "overcast",
+        "tempErrorC": 0,
+        "skyCorrect": true,
+        "precipErrorMm": 4.6
+      },
+      "observation": {
+        "highTempC": 9.7,
+        "sky": "overcast",
+        "precipMm": 0
+      },
+      "skillScore": null
+    },
+    {
+      "targetDate": "2026-10-14",
+      "leadTimeDays": 7,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 16.4,
+        "sky": "rain",
+        "tempErrorC": 6.699999999999999,
+        "skyCorrect": false,
+        "precipErrorMm": 7.8
+      },
+      "baseline": {
+        "highTempC": 9.7,
+        "sky": "overcast",
+        "tempErrorC": 0,
+        "skyCorrect": true,
+        "precipErrorMm": 4.6
+      },
+      "observation": {
+        "highTempC": 9.7,
+        "sky": "overcast",
+        "precipMm": 0
+      },
+      "skillScore": null
+    },
+    {
+      "targetDate": "2026-10-14",
+      "leadTimeDays": 2,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 10,
+        "sky": "overcast",
+        "tempErrorC": 0.3000000000000007,
+        "skyCorrect": true,
+        "precipErrorMm": 0
+      },
+      "baseline": {
+        "highTempC": 9.7,
+        "sky": "overcast",
+        "tempErrorC": 0,
+        "skyCorrect": true,
+        "precipErrorMm": 4.6
+      },
+      "observation": {
+        "highTempC": 9.7,
+        "sky": "overcast",
+        "precipMm": 0
+      },
+      "skillScore": null
     }
   ]
 }
