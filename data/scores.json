@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T09:55:11.727Z",
+  "updatedAt": "2026-10-25T10:17:02.977Z",
   "scores": [
     {
       "targetDate": "2026-06-03",
@@ -13125,6 +13125,81 @@
         "precipMm": 3.8
       },
       "skillScore": 0.76
+    },
+    {
+      "targetDate": "2026-10-19",
+      "leadTimeDays": 14,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 14.8,
+        "sky": "rain",
+        "tempErrorC": 8,
+        "skyCorrect": false,
+        "precipErrorMm": 20.95
+      },
+      "baseline": {
+        "highTempC": 9.7,
+        "sky": "overcast",
+        "tempErrorC": 2.8999999999999995,
+        "skyCorrect": false,
+        "precipErrorMm": 4.6
+      },
+      "observation": {
+        "highTempC": 6.8,
+        "sky": "partly-cloudy",
+        "precipMm": 0
+      },
+      "skillScore": -1.758620689655173
+    },
+    {
+      "targetDate": "2026-10-19",
+      "leadTimeDays": 7,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 4.8,
+        "sky": "rain",
+        "tempErrorC": -2,
+        "skyCorrect": false,
+        "precipErrorMm": 1.7
+      },
+      "baseline": {
+        "highTempC": 9.7,
+        "sky": "overcast",
+        "tempErrorC": 2.8999999999999995,
+        "skyCorrect": false,
+        "precipErrorMm": 4.6
+      },
+      "observation": {
+        "highTempC": 6.8,
+        "sky": "partly-cloudy",
+        "precipMm": 0
+      },
+      "skillScore": 0.31034482758620674
+    },
+    {
+      "targetDate": "2026-10-19",
+      "leadTimeDays": 2,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 6.4,
+        "sky": "partly-cloudy",
+        "tempErrorC": -0.39999999999999947,
+        "skyCorrect": true,
+        "precipErrorMm": 0
+      },
+      "baseline": {
+        "highTempC": 9.7,
+        "sky": "overcast",
+        "tempErrorC": 2.8999999999999995,
+        "skyCorrect": false,
+        "precipErrorMm": 4.6
+      },
+      "observation": {
+        "highTempC": 6.8,
+        "sky": "partly-cloudy",
+        "precipMm": 0
+      },
+      "skillScore": 0.8620689655172415
     }
   ]
 }
