@@ -16,5 +16,14 @@
     "sky": "overcast",
     "precipMm": 4.7,
     "source": "historical-average"
+  },
+  {
+    "capturedAt": "2026-10-26T11:42:46.291Z",
+    "targetDate": "2026-11-02",
+    "leadTimeDays": 7,
+    "highTempC": 9,
+    "sky": "partly-cloudy",
+    "precipMm": 0,
+    "source": "open-meteo"
   }
 ]
