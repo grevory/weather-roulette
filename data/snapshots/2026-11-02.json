@@ -25,5 +25,14 @@
     "sky": "partly-cloudy",
     "precipMm": 0,
     "source": "open-meteo"
+  },
+  {
+    "capturedAt": "2026-10-31T11:20:39.721Z",
+    "targetDate": "2026-11-02",
+    "leadTimeDays": 2,
+    "highTempC": 8.5,
+    "sky": "overcast",
+    "precipMm": 0,
+    "source": "open-meteo"
   }
 ]
