@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T12:37:46.999Z",
+  "updatedAt": "2026-11-15T13:03:33.980Z",
   "scores": [
     {
       "targetDate": "2026-06-03",
@@ -15025,6 +15025,81 @@
         "precipMm": 2.2
       },
       "skillScore": 0.5000000000000022
+    },
+    {
+      "targetDate": "2026-11-09",
+      "leadTimeDays": 14,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 5.6,
+        "sky": "rain",
+        "tempErrorC": -4.4,
+        "skyCorrect": true,
+        "precipErrorMm": -10.150000000000002
+      },
+      "baseline": {
+        "highTempC": 4.6,
+        "sky": "overcast",
+        "tempErrorC": -5.4,
+        "skyCorrect": false,
+        "precipErrorMm": -11.400000000000002
+      },
+      "observation": {
+        "highTempC": 10,
+        "sky": "rain",
+        "precipMm": 16.1
+      },
+      "skillScore": 0.18518518518518512
+    },
+    {
+      "targetDate": "2026-11-09",
+      "leadTimeDays": 2,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 10.2,
+        "sky": "rain",
+        "tempErrorC": 0.1999999999999993,
+        "skyCorrect": true,
+        "precipErrorMm": -6.700000000000001
+      },
+      "baseline": {
+        "highTempC": 4.6,
+        "sky": "overcast",
+        "tempErrorC": -5.4,
+        "skyCorrect": false,
+        "precipErrorMm": -11.400000000000002
+      },
+      "observation": {
+        "highTempC": 10,
+        "sky": "rain",
+        "precipMm": 16.1
+      },
+      "skillScore": 0.9629629629629631
+    },
+    {
+      "targetDate": "2026-11-09",
+      "leadTimeDays": 1,
+      "source": "open-meteo",
+      "forecast": {
+        "highTempC": 8.8,
+        "sky": "rain",
+        "tempErrorC": -1.1999999999999993,
+        "skyCorrect": true,
+        "precipErrorMm": -3.900000000000002
+      },
+      "baseline": {
+        "highTempC": 4.6,
+        "sky": "overcast",
+        "tempErrorC": -5.4,
+        "skyCorrect": false,
+        "precipErrorMm": -11.400000000000002
+      },
+      "observation": {
+        "highTempC": 10,
+        "sky": "rain",
+        "precipMm": 16.1
+      },
+      "skillScore": 0.7777777777777779
     }
   ]
 }
