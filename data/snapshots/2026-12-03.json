@@ -1,0 +1,20 @@
+[
+  {
+    "capturedAt": "2026-11-19T14:49:19.363Z",
+    "targetDate": "2026-12-03",
+    "leadTimeDays": 14,
+    "highTempC": 11.6,
+    "sky": "overcast",
+    "precipMm": 0,
+    "source": "open-meteo"
+  },
+  {
+    "capturedAt": "2026-11-19T14:49:19.363Z",
+    "targetDate": "2026-12-03",
+    "leadTimeDays": 1,
+    "highTempC": 1.3,
+    "sky": "overcast",
+    "precipMm": 4.5,
+    "source": "historical-average"
+  }
+]
